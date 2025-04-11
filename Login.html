@@ -5,25 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Login</title>
     <link rel="stylesheet" href="style.css">
-    <script src="acesso.js"></script>
 </head>
 <body>
     <h1>Login</h1>
     <form id="loginForm">
         <label for="username">Usuário:</label>
         <input type="text" id="username" required>
-        <br>
-        <label for="sector">Setor:</label>
-        <select id="sector" required>
+        
+        <label for="setor">Setor:</label>
+        <select id="setor" required>
+            <option value="">Selecione um setor</option>
             <option value="Comercial">Comercial</option>
             <option value="RH">RH</option>
             <option value="TI">TI</option>
         </select>
-        <br>
+        
         <label for="password">Senha:</label>
         <input type="password" id="password" required>
-        <br>
+        
         <button type="button" id="loginButton">Login</button>
+    </form>
     
+    <div id="MensagemdeErro"></div>
+
+    <div id="produto" style="display: none;">
+        <h2>Detalhes do Produto</h2>
+        <img id="produtoImagem" src="" alt="Imagem do Produto" style="max-width: 300px; height: auto; display: block; margin: 10px 0;">
+        <p><strong>Nome:</strong> <span id="produtoNome"></span></p>
+        <p><strong>Valor:</strong> R$ <span id="produtoValor"></span></p>
+    </div>
+
+    <div id="rhContent" style="display: none;">
+        <button id="verCargosSalarios" style="margin-bottom: 20px;">Ver cargos e salários</button>
+        
+        <div id="tabelaCargosSalarios" style="display: none;">
+            <h2>Cargos e Salários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Setor</th>
+                        <th>Cargo</th>
+                        <th>Salário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Conteúdo será inserido via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="tiConverter" style="display: none;">
+        <h2>Conversor para Binário</h2>
+        <div style="margin: 15px 0;">
+            <input type="number" id="numeroInput" placeholder="Digite um número" style="padding: 8px; width: 200px;">
+            <button id="converterBtn" style="padding: 8px 15px;">Converter para Binário</button>
+        </div>
+        <div id="resultadoBinario" style="font-weight: bold; padding: 10px; background-color: #f5f5f5;"></div>
+    </div>
+
+    <script src="acesso.js"></script>
 </body>
 </html>
